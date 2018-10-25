@@ -13,8 +13,8 @@ disp(DHtransform(5,0,3,pi/2));
 % task 2
 disp('task two');
 
-h1 = getPosition(0, 0, 0, 0, 0, 0);
-h2 = getPosition(pi, pi/2, pi/2, -pi/2, -pi/2, 2);
+h1 = getPosition(0, 0, 0, 0, 0, 2);
+h2 = getPosition(pi, pi/2, pi/2, -pi/2, -pi/6, 2);
 
 figure('Name','Three dimensional space', ...
        'Position',[400 500 860 640], ...
@@ -33,8 +33,8 @@ zlabel('Z Axis','FontSize',12,'FontWeight','bold','Color','k')
 
 view(3)
 
-plot3(h1(:,1), h1(:,2), h1(:,3),'--'), hold on;
-plot3(h2(:,1), h2(:,2), h2(:,3));
+plot3(h1(:,1), h1(:,2), h1(:,3),'o--'), hold on;
+plot3(h2(:,1), h2(:,2), h2(:,3),'*-');
 
 disp(h1);
 disp(h2);

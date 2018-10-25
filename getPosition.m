@@ -16,18 +16,18 @@ e = 1.125;
 R = [0; 0; 0; 1];
 % DHtransform(a, alpha, d, theta)
 
-pos = zeros(4,10); % the coordinate space under number 0 cannot move
+pos = zeros(4,5); % the coordinate space under number 0 cannot move
 
-A01 = DHtransform(0, -pi/2, a, th1);
-A12 = DHtransform(b,     0, 0, th2-pi/2);
-A23 = DHtransform(c,     0, 0, th3+pi/2);
-A34 = DHtransform(0, -pi/2, 0, th4+pi/2);
-A45 = DHtransform(0,     0, d, th5+pi);
+A01 = DHtransform(0, -pi/2, a,  th1);
+A12 = DHtransform(b,     0, 0,  th2-pi/2);
+A23 = DHtransform(c,     0, 0,  th3+pi/2);
+A34 = DHtransform(0,  pi/2, 0,  th4+pi/2);
+A45 = DHtransform(0,     0, d,  th5+pi);
 
-A02 = A01*A12;
-A03 = A02*A23;
-A04 = A03*A34;
-A05 = A04*A45;
+A02 = round(A01*A12, 4);
+A03 = round(A02*A23, 4);
+A04 = round(A03*A34, 4);
+A05 = round(A04*A45, 4);
 
 pos(:,2) = A01*R;
 pos(:,3) = A02*R;
